@@ -1,24 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %} Welcome to Nattly URL Shortener {% endblock %}</h1>
+    <h1 style="color: #007bff">{% block title %} Turntabl URL Shortener Project{% endblock %}</h1>
     <form method="post">
     <div class="form-group">
-        <label for="url">URL</label>
+        <br>
+        <label for="url"><h4>URL</h4></label>
         <input type="text" name="url"
-               placeholder="Enter or Paste URL to shorten" class="form-control"
-               value="{{ request.form['url'] }}" autofocus>
-
-        </input>
+               placeholder="Enter or paste URL to shorten" class="form-control"
+               value="{{ request.form['url'] }}" autofocus></input>
     </div>
 
     <div class="form-group">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Shorten URL</button>
     </div>
     </form>
 
     {% if short_url %}
     <hr>
-    <span>{{ short_url }}</span>
+<h6><span>Shortened URL: <a href="{{ short_url }}" style="text-decoration: none">{{ short_url }}</span></h6>
     {% endif %}
 {% endblock %}
