@@ -1,9 +1,9 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>{% block title %} Demo {% endblock %}</h1>
+<h1>{% block title %} Welcome to the About Page {% endblock %}</h1>
 
 <div class="demo">
-  <video width="320" height="240" autoplay muted>
+  <video width="520" height="540" autoplay muted>
     <source src={{ url_for('static', filename="demo.mp4") }} type="video/mp4">
     Your browser does not support the video tag.
   </video>
