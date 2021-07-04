@@ -9,7 +9,7 @@ def get_db_connection():
     return conn
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 app.config['SECRET_KEY'] = 'this should be a secret random string'
 
 hashids = Hashids(min_length=4, salt=app.config['SECRET_KEY'])
@@ -38,6 +38,12 @@ def index():
         return render_template('index.html', short_url=short_url)
 
     return render_template('index.html')
+
+
+@app.route('/about')
+def about():
+
+    return render_template('about.html')
 
 
 if __name__ == '__main__':
