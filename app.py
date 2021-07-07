@@ -27,7 +27,7 @@ def index():
             return redirect(url_for('index'))
 
         url_data = database_conn.execute('INSERT INTO urls (original_url) VALUES (?)',
-                                (url,))
+                                         (url,))
         database_conn.commit()
         database_conn.close()
 
@@ -48,13 +48,13 @@ def url_redirect(id):
     if original_id:
         original_id = original_id[0]
         url_data = database_conn.execute('SELECT original_url, clicks FROM urls'
-                                ' WHERE id = (?)', (original_id,)
-                                ).fetchone()
+                                         ' WHERE id = (?)', (original_id,)
+                                         ).fetchone()
         original_url = url_data['original_url']
         clicks = url_data['clicks']
 
         database_conn.execute('UPDATE urls SET clicks = ? WHERE id = ?',
-                     (clicks+1, original_id))
+                              (clicks+1, original_id))
 
         database_conn.commit()
         database_conn.close()
