@@ -2,14 +2,14 @@
 
 {% block content %}
 
-    <h1 style="color: #007bff; text-align: center">{% block title %} TURNTABL URL SHORTENER PROJECT{% endblock %}</h1>
+    <h1 style="color:White; text-align: center">{% block title %} TURNTABL URL SHORTENER PROJECT{% endblock %}</h1>
     <form method="post">
-    <div class="form-group">
+    <div class="form-group"> 
         <br>
-        <label for="url"><h4>URL</h4></label>
+        <label for="url" style="color:White; text-align: center"><h4 >URL</h4></label>
         <input type="text" name="url"
                placeholder="Enter or paste URL to shorten" class="form-control"
-               value="{{ request.form['url'] }}" autofocus></input>
+               value="{{ request.form['url'] }}" autofocus style="width: 700px;"/>
     </div>
 
     <div class="form-group">
