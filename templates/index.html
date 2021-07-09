@@ -3,22 +3,23 @@
 {% block content %}
 
     <h1 style="color:White; text-align: center">{% block title %} TURNTABL URL SHORTENER PROJECT{% endblock %}</h1>
+    <br>
     <form method="post">
-    <div class="form-group"> 
+    <div class="form-group" style="display: flex; justify-content: center">
+        <label for="url" style="color:White; text-align: center; margin-right: 8px; margin-bottom: none"><h4 >URL</h4></label>
         <br>
-        <label for="url" style="color:White; text-align: center"><h4 >URL</h4></label>
         <input type="text" name="url"
                placeholder="Enter or paste URL to shorten" class="form-control"
                value="{{ request.form['url'] }}" autofocus style="width: 700px;"/>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" style="display: flex; justify-content: center">
         <button type="submit" class="btn btn-primary">Shorten URL</button>
     </div>
     </form>
 
     {% if short_url %}
     <hr>
-<h6><span>Shortened URL: <a href="{{ short_url }}" style="text-decoration: none" target="_blank"/>{{ short_url }}</span></h6>
+<h4><span style="color: white; display: flex; justify-content: center">Shortened URL:  <a href="{{ short_url }}" style="text-decoration: none" target="_blank"/> {{ short_url }}</span></h4>
     {% endif %}
 {% endblock %}
